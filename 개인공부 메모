@@ -1,0 +1,5 @@
+int i 처럼 class를 만들기 위해서
+class 변수명 { 내용 }
+```jshell
+class Country
+```
