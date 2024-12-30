@@ -42,11 +42,16 @@ UDP 프로토콜 : 비연결지향 프로토콜. 일단 보낸다. 실시간 방
 장치 : 케이블, 리피터, 허브
 
 2. 데이터링크
-역할 : 장치간 데이터 운송방식
-약속 : Ethernet, HDLC
-장치 : Switch
+역할 : 장치간(Point to Point) 데이터 운송방식
+약속 : LAN(Ethernet), WAN(HDLC)
+장치 : L2 Switch
 
 3. 네트워크
 역할 : 경로탐색
 약속 : IP, ICMP, ARP, Routing Protocol
 장치 : 라우터
+
+4. 전송
+역할 : 종단 간(End to End) 데이터 신뢰 보장
+약속 : TCP, UDP
+장치 : L4 Switch(로드밸런서)
