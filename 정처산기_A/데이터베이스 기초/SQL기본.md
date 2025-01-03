@@ -7,12 +7,14 @@ sys 			: infomation_schema와Perfomance_schema의 분석을 돕기 위해 만들
 
 한글 글자당 3byte사용
 
-> MySQL 실행
+> MySQL 실행 및 종료
 
 cmd에서 mysql -u root -p 입력.
 -u : 유저
 root : 유저명
 -p : 패스워드로 인증
+
+종료는 exit;
 
 
 > 데이터베이스 선택
@@ -23,11 +25,18 @@ use test2db;
 ```
 
 
-> 테이블 조회
+> 테이블 속성 조회
 
 desc 테이블명;
 ``` mysql
 desc tbl_product;
+```
+
+> 테이블 내용 조회
+
+select * from 데이터베이스명.테이블명;
+``` mysql
+select * from test2db.tbl_user;
 ```
 
 
@@ -58,4 +67,25 @@ column 삭제 : 		       drop column 컬럼명;
 alter table tbl_product add column amount int not null after prod_price;
 alter table tbl_product change column prod_price proc_price varchar(100) null;
 alter table tbl_product drop column prod_details;
+```
+
+> 값넣기
+
+insert into 테이블명(컬럼명1, 컬럼명2, 컬럼명3, 컬럼명4) values(값1, 값2, 값3, 값4);
+문자열은 따옴표 안에 작성한다.
+
+```mysql
+insert into tbl_user(user_id, user_name, user_age, user_gender) values('aaa', '홍길동', 11, 'M');
+```
+
+> 값수정
+
+``` mysql
+update test2db.tbl_user set user_name='김범수', user_gender='W' where user_id='bbb';
+```
+
+>행 삭제
+
+``` mysql
+delete from test2db.tbl_user where(user_id='bbb');
 ```
