@@ -7,6 +7,29 @@ sys 			: infomation_schema와Perfomance_schema의 분석을 돕기 위해 만들
 
 한글 글자당 3byte사용
 
+> MySQL 실행
+
+cmd에서 mysql -u root -p 입력.
+-u : 유저
+root : 유저명
+-p : 패스워드로 인증
+
+
+> 데이터베이스 선택
+
+use 데이터베이스명
+``` mysql
+use test2db;
+```
+
+
+> 테이블 조회
+
+desc 테이블명;
+``` mysql
+desc tbl_product;
+```
+
 
 > 테이블 생성
 
