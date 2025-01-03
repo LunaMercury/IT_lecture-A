@@ -9,10 +9,10 @@
 
 > MySQL 실행 및 종료
 
-cmd에서 mysql -u root -p 입력.
--u : 유저
-root : 유저명
--p : 패스워드로 인증
+cmd에서 mysql -u root -p 입력.  
+-u : 유저  
+root : 유저명  
+-p : 패스워드로 인증  
 
 종료는 exit;
 
@@ -42,9 +42,9 @@ select * from test2db.tbl_user;
 
 > 테이블 생성
 
-create table 데이터베이스명.테이블명(
-컬럼명 자료형 제약조건 프라이머리키(선택사항),
-컬럼명 자료형 제약조건);
+create table 데이터베이스명.테이블명(  
+컬럼명 자료형 제약조건 프라이머리키(선택사항),  
+컬럼명 자료형 제약조건);  
 
 ```  mysql
 create table test2db.tbl_product(
@@ -59,9 +59,9 @@ prod_price int not null);
 
 > 테이블 수정
 
-column 추가 : alter table 테이블명 add column 컬럼명 자료형 제약조건 after 이전컬럼;
-column 수정 : 		       change column 기존컬럼명 변경컬럼명 변경자료형 제약조건;
-column 삭제 : 		       drop column 컬럼명;
+column 추가 : alter table 테이블명 add column 컬럼명 자료형 제약조건 after 이전컬럼;  
+column 수정 : 		       change column 기존컬럼명 변경컬럼명 변경자료형 제약조건;  
+column 삭제 : 		       drop column 컬럼명;  
 
 ``` mysql
 alter table tbl_product add column amount int not null after prod_price;
@@ -71,7 +71,7 @@ alter table tbl_product drop column prod_details;
 
 > 값넣기
 
-insert into 테이블명(컬럼명1, 컬럼명2, 컬럼명3, 컬럼명4) values(값1, 값2, 값3, 값4);
+insert into 테이블명(컬럼명1, 컬럼명2, 컬럼명3, 컬럼명4) values(값1, 값2, 값3, 값4);  
 문자열은 따옴표 안에 작성한다.
 
 ```mysql
@@ -80,12 +80,14 @@ insert into tbl_user(user_id, user_name, user_age, user_gender) values('aaa', '�
 
 > 값수정
 
+update 데이터베이스명.테이블명 set 컬럼명='내용', 컬럼명='내용' where 컬럼명='내용';  
+where 뒤의 컬럼명은 주로 primary key를 가진 속성을 참조한다.
 ``` mysql
 update test2db.tbl_user set user_name='김범수', user_gender='W' where user_id='bbb';
 ```
 
 >행 삭제
-
+delete from 데이터베이스명.테이블명 where(컬럼명='컬럼내용(주로 프라이머리키를 가진 컬럼)');
 ``` mysql
 delete from test2db.tbl_user where(user_id='bbb');
 ```
